@@ -11,7 +11,24 @@ public class Leg {
     Place from;
     Place to;
     EncodedPolylineBean legGeometry;
+    String route;
+    String agencyName;
 
+    public String getRoute() {
+        return route;
+    }
+
+    public void setRoute(String route) {
+        this.route = route;
+    }
+
+    public String getAgencyName() {
+        return agencyName;
+    }
+
+    public void setAgencyName(String agencyName) {
+        this.agencyName = agencyName;
+    }
 
     public long getStartTime() {
         return startTime;

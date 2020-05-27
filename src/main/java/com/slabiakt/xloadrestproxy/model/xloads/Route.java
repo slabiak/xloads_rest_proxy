@@ -10,41 +10,102 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class Route {
-
-    String mode;
+    //all
     long totalTime;
-    double totalDistance;
+    String mode;
     List<PolyLine> sections;
 
+    //car,foot
+    double totalDistance;
 
-//    long startTime;
-//    long endTime;
-//    long walkTime;
-//    long transitTime;
-//    long waitingTime;
-//    double walkDistance;
-//    int transfers;
-//    List<Leg> legs;
-
-
-//    double distance;
+    //transit
+    long startTime;
+    long endTime;
+    long walkTime;
+    long transitTime;
+    long waitingTime;
+    double walkDistance;
+    int transfers;
 
 
     public Route(Path path) {
-        this.mode = path.getMode();
         this.totalTime = path.getTime()/1000;
-        this.totalDistance = path.getDistance();
+        this.mode = path.getMode();
         PolyLine polyLine = new PolyLine(path.getPoints(),path.getMode());
         List<PolyLine> polyLines = new ArrayList<>();
         polyLines.add(polyLine);
         this.sections = polyLines;
+        this.totalDistance = path.getDistance();
     }
 
     public Route(Itinerary itinerary) {
         this.totalTime = itinerary.getDuration();
+        this.mode = "transit";
         this.sections = itinerary.getLegs().stream().map(leg -> new PolyLine(leg)).collect(Collectors.toList());
         this.totalDistance = 0;
-        this.mode = "transit";
+        this.startTime =itinerary.getStartTime();
+        this.endTime = itinerary.getEndTime();
+        this.walkTime = itinerary.getWalkTime();
+        this.transitTime = itinerary.getTransitTime();
+        this.waitingTime = itinerary.getWaitingTime();
+        this.walkDistance = itinerary.getWalkDistance();
+        this.transfers = itinerary.getTransfers();
+    }
+
+    public long getStartTime() {
+        return startTime;
+    }
+
+    public void setStartTime(long startTime) {
+        this.startTime = startTime;
+    }
+
+    public long getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(long endTime) {
+        this.endTime = endTime;
+    }
+
+    public long getWalkTime() {
+        return walkTime;
+    }
+
+    public void setWalkTime(long walkTime) {
+        this.walkTime = walkTime;
+    }
+
+    public long getTransitTime() {
+        return transitTime;
+    }
+
+    public void setTransitTime(long transitTime) {
+        this.transitTime = transitTime;
+    }
+
+    public long getWaitingTime() {
+        return waitingTime;
+    }
+
+    public void setWaitingTime(long waitingTime) {
+        this.waitingTime = waitingTime;
+    }
+
+    public double getWalkDistance() {
+        return walkDistance;
+    }
+
+    public void setWalkDistance(double walkDistance) {
+        this.walkDistance = walkDistance;
+    }
+
+    public int getTransfers() {
+        return transfers;
+    }
+
+    public void setTransfers(int transfers) {
+        this.transfers = transfers;
     }
 
     public double getTotalDistance() {

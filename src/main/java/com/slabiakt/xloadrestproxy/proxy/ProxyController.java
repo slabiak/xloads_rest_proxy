@@ -1,7 +1,5 @@
 package com.slabiakt.xloadrestproxy.proxy;
 
-import com.slabiakt.xloadrestproxy.model.hopper.HopperResponse;
-import com.slabiakt.xloadrestproxy.model.otp.OtpResponse;
 import com.slabiakt.xloadrestproxy.model.xloads.Route;
 import com.slabiakt.xloadrestproxy.service.HopperService;
 import com.slabiakt.xloadrestproxy.service.OtpService;
@@ -15,7 +13,7 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/route")
-@CrossOrigin(origins="*")
+@CrossOrigin(origins = "*")
 public class ProxyController {
 
     @Autowired
@@ -31,11 +29,11 @@ public class ProxyController {
 
     @GetMapping("/car")
     public List<Route> car(@RequestParam String fromLng, @RequestParam String fromLat, @RequestParam String toLng, @RequestParam String toLat) {
-        return hopperService.makeRequest(fromLng,fromLat,toLng,toLat,"car").getPaths().stream().map(path -> new Route(path)).collect(Collectors.toList());
+        return hopperService.makeRequest(fromLng, fromLat, toLng, toLat, "car").getPaths().stream().map(path -> new Route(path)).collect(Collectors.toList());
     }
 
     @GetMapping("/foot")
     public List<Route> walk(@RequestParam String fromLng, @RequestParam String fromLat, @RequestParam String toLng, @RequestParam String toLat) {
-        return hopperService.makeRequest(fromLng,fromLat,toLng,toLat,"foot").getPaths().stream().map(path -> new Route(path)).collect(Collectors.toList());
+        return hopperService.makeRequest(fromLng, fromLat, toLng, toLat, "foot").getPaths().stream().map(path -> new Route(path)).collect(Collectors.toList());
     }
 }
