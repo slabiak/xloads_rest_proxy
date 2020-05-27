@@ -36,4 +36,9 @@ public class ProxyController {
     public List<Route> walk(@RequestParam String fromLng, @RequestParam String fromLat, @RequestParam String toLng, @RequestParam String toLat) {
         return hopperService.makeRequest(fromLng, fromLat, toLng, toLat, "foot").getPaths().stream().map(path -> new Route(path)).collect(Collectors.toList());
     }
+
+    @GetMapping("/bike")
+    public List<Route> bike(@RequestParam String fromLng, @RequestParam String fromLat, @RequestParam String toLng, @RequestParam String toLat) {
+        return hopperService.makeRequest(fromLng, fromLat, toLng, toLat, "bike").getPaths().stream().map(path -> new Route(path)).collect(Collectors.toList());
+    }
 }
