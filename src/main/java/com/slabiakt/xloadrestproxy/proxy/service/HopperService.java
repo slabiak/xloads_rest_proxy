@@ -1,7 +1,6 @@
-package com.slabiakt.xloadrestproxy.service;
+package com.slabiakt.xloadrestproxy.proxy.service;
 
-import com.slabiakt.xloadrestproxy.model.hopper.HopperResponse;
-import com.slabiakt.xloadrestproxy.model.otp.OtpResponse;
+import com.slabiakt.xloadrestproxy.proxy.model.hopper.HopperResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;

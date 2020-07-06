@@ -1,42 +1,25 @@
-package com.slabiakt.xloadrestproxy.model.xloads;
+package com.slabiakt.xloadrestproxy.proxy.model.otp;
 
-import com.slabiakt.xloadrestproxy.model.otp.Leg;
-import com.slabiakt.xloadrestproxy.model.otp.Place;
+public class Leg {
 
-import java.util.List;
-
-public class PolyLine {
-    String value;
-    String mode;
-
-    //transit only
     long startTime;
     long endTime;
     double distance;
-    String route;
+    String mode;
     double duration;
     boolean transitLeg;
     Place from;
     Place to;
+    EncodedPolylineBean legGeometry;
+    String route;
     String agencyName;
 
-    public PolyLine(Leg leg) {
-        this.value = leg.getLegGeometry().getPoints();
-        this.mode = leg.getMode();
-        this.startTime = leg.getStartTime();
-        this.endTime = leg.getEndTime();
-        this.distance = leg.getDistance();
-        this.route = leg.getRoute();
-        this.duration = leg.getDuration();
-        this.transitLeg = leg.isTransitLeg();
-        this.from = leg.getFrom();
-        this.to = leg.getTo();
-        this.agencyName = leg.getAgencyName();
+    public String getRoute() {
+        return route;
     }
-    
-    public PolyLine(String value, String mode) {
-        this.value = value;
-        this.mode = mode;
+
+    public void setRoute(String route) {
+        this.route = route;
     }
 
     public String getAgencyName() {
@@ -71,12 +54,12 @@ public class PolyLine {
         this.distance = distance;
     }
 
-    public String getRoute() {
-        return route;
+    public String getMode() {
+        return mode;
     }
 
-    public void setRoute(String route) {
-        this.route = route;
+    public void setMode(String mode) {
+        this.mode = mode;
     }
 
     public double getDuration() {
@@ -111,19 +94,11 @@ public class PolyLine {
         this.to = to;
     }
 
-    public String getValue() {
-        return value;
+    public EncodedPolylineBean getLegGeometry() {
+        return legGeometry;
     }
 
-    public void setValue(String value) {
-        this.value = value;
-    }
-
-    public String getMode() {
-        return mode;
-    }
-
-    public void setMode(String mode) {
-        this.mode = mode;
+    public void setLegGeometry(EncodedPolylineBean legGeometry) {
+        this.legGeometry = legGeometry;
     }
 }

@@ -1,4 +1,4 @@
-package com.slabiakt.xloadrestproxy.model.hopper;
+package com.slabiakt.xloadrestproxy.proxy.model.hopper;
 
 public class Path {
 

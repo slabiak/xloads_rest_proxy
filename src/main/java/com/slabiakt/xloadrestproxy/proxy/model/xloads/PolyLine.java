@@ -1,25 +1,40 @@
-package com.slabiakt.xloadrestproxy.model.otp;
+package com.slabiakt.xloadrestproxy.proxy.model.xloads;
 
-public class Leg {
+import com.slabiakt.xloadrestproxy.proxy.model.otp.Leg;
+import com.slabiakt.xloadrestproxy.proxy.model.otp.Place;
 
+public class PolyLine {
+    String value;
+    String mode;
+
+    //transit only
     long startTime;
     long endTime;
     double distance;
-    String mode;
+    String route;
     double duration;
     boolean transitLeg;
     Place from;
     Place to;
-    EncodedPolylineBean legGeometry;
-    String route;
     String agencyName;
 
-    public String getRoute() {
-        return route;
+    public PolyLine(Leg leg) {
+        this.value = leg.getLegGeometry().getPoints();
+        this.mode = leg.getMode();
+        this.startTime = leg.getStartTime();
+        this.endTime = leg.getEndTime();
+        this.distance = leg.getDistance();
+        this.route = leg.getRoute();
+        this.duration = leg.getDuration();
+        this.transitLeg = leg.isTransitLeg();
+        this.from = leg.getFrom();
+        this.to = leg.getTo();
+        this.agencyName = leg.getAgencyName();
     }
-
-    public void setRoute(String route) {
-        this.route = route;
+    
+    public PolyLine(String value, String mode) {
+        this.value = value;
+        this.mode = mode;
     }
 
     public String getAgencyName() {
@@ -54,12 +69,12 @@ public class Leg {
         this.distance = distance;
     }
 
-    public String getMode() {
-        return mode;
+    public String getRoute() {
+        return route;
     }
 
-    public void setMode(String mode) {
-        this.mode = mode;
+    public void setRoute(String route) {
+        this.route = route;
     }
 
     public double getDuration() {
@@ -94,11 +109,19 @@ public class Leg {
         this.to = to;
     }
 
-    public EncodedPolylineBean getLegGeometry() {
-        return legGeometry;
+    public String getValue() {
+        return value;
     }
 
-    public void setLegGeometry(EncodedPolylineBean legGeometry) {
-        this.legGeometry = legGeometry;
+    public void setValue(String value) {
+        this.value = value;
+    }
+
+    public String getMode() {
+        return mode;
+    }
+
+    public void setMode(String mode) {
+        this.mode = mode;
     }
 }

@@ -1,4 +1,4 @@
-package com.slabiakt.xloadrestproxy.model.xloads;
+package com.slabiakt.xloadrestproxy.proxy.model.xloads;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.slabiakt.xloadrestproxy.model.otp;
+package com.slabiakt.xloadrestproxy.proxy.model.otp;
 
 public class Place {
 

@@ -1,8 +1,8 @@
-package com.slabiakt.xloadrestproxy.proxy;
+package com.slabiakt.xloadrestproxy.proxy.controller;
 
-import com.slabiakt.xloadrestproxy.model.xloads.Route;
-import com.slabiakt.xloadrestproxy.service.HopperService;
-import com.slabiakt.xloadrestproxy.service.OtpService;
+import com.slabiakt.xloadrestproxy.proxy.model.xloads.Route;
+import com.slabiakt.xloadrestproxy.proxy.service.HopperService;
+import com.slabiakt.xloadrestproxy.proxy.service.OtpService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;

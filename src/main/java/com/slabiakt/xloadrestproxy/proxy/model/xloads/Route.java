@@ -1,9 +1,7 @@
-package com.slabiakt.xloadrestproxy.model.xloads;
+package com.slabiakt.xloadrestproxy.proxy.model.xloads;
 
-import com.slabiakt.xloadrestproxy.model.hopper.Path;
-import com.slabiakt.xloadrestproxy.model.hopper.Points;
-import com.slabiakt.xloadrestproxy.model.otp.Itinerary;
-import com.slabiakt.xloadrestproxy.model.otp.Leg;
+import com.slabiakt.xloadrestproxy.proxy.model.hopper.Path;
+import com.slabiakt.xloadrestproxy.proxy.model.otp.Itinerary;
 
 import java.util.ArrayList;
 import java.util.List;

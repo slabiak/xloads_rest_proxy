@@ -1,6 +1,4 @@
-package com.slabiakt.xloadrestproxy.model.otp;
-
-import java.io.Serializable;
+package com.slabiakt.xloadrestproxy.proxy.model.otp;
 
 public class EncodedPolylineBean  {
 

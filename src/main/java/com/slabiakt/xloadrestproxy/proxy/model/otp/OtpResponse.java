@@ -1,9 +1,8 @@
-package com.slabiakt.xloadrestproxy.model.otp;
+package com.slabiakt.xloadrestproxy.proxy.model.otp;
 
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonRootName;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 import java.util.List;

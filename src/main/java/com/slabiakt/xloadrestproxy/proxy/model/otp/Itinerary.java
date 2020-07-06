@@ -1,4 +1,4 @@
-package com.slabiakt.xloadrestproxy.model.otp;
+package com.slabiakt.xloadrestproxy.proxy.model.otp;
 
 import java.util.List;
 
