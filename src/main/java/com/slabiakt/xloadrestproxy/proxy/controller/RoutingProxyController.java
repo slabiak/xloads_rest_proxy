@@ -12,9 +12,9 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/route")
+@RequestMapping("/api/route")
 @CrossOrigin(origins = "*")
-public class ProxyController {
+public class RoutingProxyController {
 
     @Autowired
     private OtpService otpService;
