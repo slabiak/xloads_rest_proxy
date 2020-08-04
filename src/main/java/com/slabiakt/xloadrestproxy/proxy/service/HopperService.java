@@ -3,6 +3,7 @@ package com.slabiakt.xloadrestproxy.proxy.service;
 import com.slabiakt.xloadrestproxy.proxy.model.hopper.HopperResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -17,6 +18,7 @@ public class HopperService {
 
     private static String hopperUrl = "/route?point=%s,%s&point=%s,%s&type=json&locale=pl-PL&weighting=fastest&vehicle=%s";
 
+    @Cacheable(value = "routes", unless = "#result.paths.size() < 1")
     public HopperResponse makeRequest(String fromLng, String fromLat, String toLng, String toLat, String vehicle) {
         String url = urlPrefix + String.format(hopperUrl, fromLat, fromLng, toLat, toLng, vehicle);
         HopperResponse forObject = restTemplate.getForObject(url, HopperResponse.class);
