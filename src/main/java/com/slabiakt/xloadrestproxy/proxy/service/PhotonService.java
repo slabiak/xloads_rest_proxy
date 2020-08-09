@@ -1,12 +1,9 @@
 package com.slabiakt.xloadrestproxy.proxy.service;
 
-import com.slabiakt.xloadrestproxy.proxy.model.otp.OtpResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
-
-import java.time.LocalDateTime;
 
 @Service
 public class PhotonService {

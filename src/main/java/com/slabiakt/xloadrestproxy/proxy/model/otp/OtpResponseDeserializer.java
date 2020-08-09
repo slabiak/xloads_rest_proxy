@@ -28,7 +28,7 @@ public class OtpResponseDeserializer extends StdDeserializer<OtpResponse> {
         JsonNode productNode = jsonParser.getCodec().readTree(jsonParser);
         OtpResponse otpResponse = new OtpResponse();
         List<JsonNode> itineraries = new ArrayList<>();
-        productNode.get("plan").get("itineraries").elements().forEachRemaining(e->{
+        productNode.get("plan").get("itineraries").elements().forEachRemaining(e -> {
             itineraries.add(e);
         });
         ObjectMapper objectMapper = new ObjectMapper();

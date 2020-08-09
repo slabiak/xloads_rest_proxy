@@ -19,7 +19,7 @@ public class PlacesProxyController {
 
     @GetMapping("/reverse")
     public Object reverse(@RequestParam String lat, @RequestParam String lng) {
-        return photonService.makeReverseGeocodeRequest(lng,lat);
+        return photonService.makeReverseGeocodeRequest(lng, lat);
     }
 
 }

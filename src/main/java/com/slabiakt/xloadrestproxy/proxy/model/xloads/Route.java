@@ -27,9 +27,9 @@ public class Route {
 
 
     public Route(Path path) {
-        this.totalTime = path.getTime()/1000;
+        this.totalTime = path.getTime() / 1000;
         this.mode = path.getMode();
-        PolyLine polyLine = new PolyLine(path.getPoints(),path.getMode());
+        PolyLine polyLine = new PolyLine(path.getPoints(), path.getMode());
         List<PolyLine> polyLines = new ArrayList<>();
         polyLines.add(polyLine);
         this.sections = polyLines;
@@ -41,7 +41,7 @@ public class Route {
         this.mode = "transit";
         this.sections = itinerary.getLegs().stream().map(leg -> new PolyLine(leg)).collect(Collectors.toList());
         this.totalDistance = 0;
-        this.startTime =itinerary.getStartTime();
+        this.startTime = itinerary.getStartTime();
         this.endTime = itinerary.getEndTime();
         this.walkTime = itinerary.getWalkTime();
         this.transitTime = itinerary.getTransitTime();

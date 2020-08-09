@@ -1,6 +1,6 @@
 package com.slabiakt.xloadrestproxy.proxy.model.otp;
 
-public class EncodedPolylineBean  {
+public class EncodedPolylineBean {
 
     private String points;
     private String levels;

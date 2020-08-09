@@ -31,7 +31,7 @@ public class PolyLine {
         this.to = leg.getTo();
         this.agencyName = leg.getAgencyName();
     }
-    
+
     public PolyLine(String value, String mode) {
         this.value = value;
         this.mode = mode;
